@@ -1,0 +1,402 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import SectionHeading from '@components/SectionHeading.astro';
+import NewsletterForm from '@components/NewsletterForm.astro';
+
+const capabilities = [
+  {
+    category: "Engineering & Construction",
+    items: ["Structural Analysis", "Civil Engineering Principles", "Construction Workflow Mapping", "Site Logistics Planning"]
+  },
+  {
+    category: "Digital Tools & Product",
+    items: ["User Interface & UX Design", "Parametric Modeling Concepts", "BIM Data Workflows", "Frontend Architecture"]
+  },
+  {
+    category: "Interests & Research",
+    items: ["Construction Automation", "Embodied Carbon Analytics", "Modular Prefabrication", "Field Team Communication"]
+  }
+];
+
+const experienceTimeline = [
+  {
+    period: "Present",
+    role: "Civil Engineer & Digital Technology Explorer",
+    focus: "Investigating digital workflows, software design, and productivity tools tailored to structural engineering and site operations."
+  },
+  {
+    period: "Background",
+    role: "Civil Engineering Foundations",
+    focus: "Academic training and practical exposure to civil engineering fundamentals, site safety, material testing, and structural mechanics."
+  },
+  {
+    period: "Continuous Focus",
+    role: "Product Design & Technology Integration",
+    focus: "Self-directed study and prototyping in modern web technologies, UI design, and parametric calculations for construction."
+  }
+];
+---
+
+<BaseLayout
+  title="About — Abeeb Olawuwo"
+  description="Learn about Abeeb Olawuwo's background in civil engineering, passion for product design, and vision for digital technology in construction."
+>
+  <!-- Page Header -->
+  <section class="about-hero-section">
+    <div class="container">
+      <div class="tag-row">
+        <span class="badge badge-accent">BACKGROUND &amp; PHILOSOPHY</span>
+      </div>
+      <h1 class="about-title">
+        BRIDGING <span class="text-accent">CIVIL ENGINEERING</span> WITH DIGITAL DESIGN INTENTION.
+      </h1>
+      <p class="about-lead">
+        I am Abeeb Olawuwo. My trajectory combines civil engineering fundamentals with a deep curiosity about how digital software transforms how we design, build, and operate physical infrastructure.
+      </p>
+    </div>
+  </section>
+
+  <!-- Background Section -->
+  <section class="section section-border">
+    <div class="container">
+      <div class="grid-two-col">
+        <div>
+          <SectionHeading
+            tag="ORIGINS"
+            title="CIVIL ENGINEERING FOUNDATION"
+          />
+        </div>
+        <div class="text-content">
+          <p class="paragraph">
+            My background in civil engineering provided me with an enduring appreciation for structural rigor, physical constraints, and the immense logistical coordination required to realize built projects.
+          </p>
+          <p class="paragraph">
+            During my exposure to engineering principles and site operations, I observed a consistent gap: while structural analysis and design codes have evolved, day-to-day field communication and project workflows often rely on fragmented tools and disconnected information channels.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Intersection Section -->
+  <section class="section section-border bg-subtle">
+    <div class="container">
+      <div class="grid-two-col">
+        <div>
+          <SectionHeading
+            tag="THE INTERSECTION"
+            title="WHY DIGITAL TECH FOR CONSTRUCTION?"
+          />
+        </div>
+        <div class="text-content">
+          <p class="paragraph">
+            The construction industry is at a pivotal moment. The convergence of cloud computing, accessible digital interfaces, mobile field hardware, and data automation offers unprecedented opportunities to eliminate costly rework and improve safety.
+          </p>
+          <div class="highlight-box">
+            <h3 class="highlight-title">CORE BELIEF</h3>
+            <p class="highlight-text">
+              Digital technology shouldn't complicate site work. The best construction tools are invisible—seamlessly embedded into daily field routines, giving engineers clarity without cognitive overload.
+            </p>
+          </div>
+          <p class="paragraph">
+            My goal is to contribute to tools and digital frameworks that empower civil engineers, contractors, and project managers to make faster, data-informed decisions throughout the project lifecycle.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Capabilities & Experience Section -->
+  <section class="section section-border">
+    <div class="container">
+      <SectionHeading
+        tag="CAPABILITIES &amp; FOCUS"
+        title="EXPERIENCE &amp; DOMAIN KNOWLEDGE"
+        subtitle="A synthesis of structural engineering principles, digital tool exploration, and workflow design."
+      />
+
+      <div class="capabilities-grid">
+        {capabilities.map((cap) => (
+          <div class="capability-card">
+            <h3 class="cap-category">{cap.category}</h3>
+            <ul class="cap-list">
+              {cap.items.map((item) => (
+                <li class="cap-item">
+                  <span class="cap-dot"></span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+
+      <!-- Experience Timeline -->
+      <div class="timeline-wrapper">
+        <h3 class="timeline-heading">PROFESSIONAL FOCUS TIMELINE</h3>
+        <div class="timeline-list">
+          {experienceTimeline.map((item) => (
+            <div class="timeline-item">
+              <div class="timeline-period">{item.period}</div>
+              <div class="timeline-content">
+                <h4 class="timeline-role">{item.role}</h4>
+                <p class="timeline-focus">{item.focus}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Personal Perspective Section -->
+  <section class="section section-border">
+    <div class="container">
+      <div class="perspective-card">
+        <div class="perspective-content">
+          <SectionHeading
+            tag="PERSPECTIVE &amp; VALUES"
+            title="WORKING PHILOSOPHY"
+          />
+          <div class="values-grid">
+            <div class="value-item">
+              <span class="value-number">01</span>
+              <h4 class="value-title">Field-First Mindset</h4>
+              <p class="value-desc">Software is only as good as its usability on an active site under harsh weather, tight deadlines, and high pressure.</p>
+            </div>
+            <div class="value-item">
+              <span class="value-number">02</span>
+              <h4 class="value-title">Clarity Over Complexity</h4>
+              <p class="value-desc">Eliminate vanity features. Focus on building sharp, single-purpose workflows that solve tangible bottlenecks.</p>
+            </div>
+            <div class="value-item">
+              <span class="value-number">03</span>
+              <h4 class="value-title">Continuous Learning</h4>
+              <p class="value-desc">Constantly exploring new technology, digital tools, and architectural methods to remain adaptable and forward-looking.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="section section-border">
+    <div class="container">
+      <NewsletterForm
+        headline="STAY INSPIRED BY DIGITAL CONSTRUCTION"
+        subheadline="Receive Abeeb's weekly newsletter on construction technology, software workflows, and practical digital transformation in engineering."
+      />
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .about-hero-section {
+    padding-top: clamp(4rem, 8vw, 7rem);
+    padding-bottom: clamp(3rem, 6vw, 5rem);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .tag-row {
+    margin-bottom: 1.5rem;
+  }
+
+  .about-title {
+    font-size: clamp(2.75rem, 6.5vw, 5rem);
+    line-height: 1.02;
+    max-width: 960px;
+    margin-bottom: 2rem;
+  }
+
+  .text-accent {
+    color: var(--color-accent);
+  }
+
+  .about-lead {
+    font-size: clamp(1.2rem, 2.2vw, 1.4rem);
+    color: var(--color-text-muted);
+    max-width: 780px;
+    line-height: 1.6;
+  }
+
+  .grid-two-col {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .bg-subtle {
+    background-color: var(--color-bg-subtle);
+  }
+
+  .text-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .paragraph {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--color-text);
+  }
+
+  .highlight-box {
+    background-color: #ffffff;
+    border-left: 4px solid var(--color-accent);
+    padding: 1.75rem;
+    border: 1px solid var(--color-border);
+    border-left: 4px solid var(--color-accent);
+    margin: 0.5rem 0;
+  }
+
+  .highlight-title {
+    font-size: 1.1rem;
+    letter-spacing: 0.08em;
+    color: var(--color-accent);
+    margin-bottom: 0.5rem;
+  }
+
+  .highlight-text {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--color-text);
+    line-height: 1.55;
+  }
+
+  /* Capabilities Grid */
+  .capabilities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 5rem;
+  }
+
+  .capability-card {
+    background-color: var(--color-bg-subtle);
+    border: 1px solid var(--color-border);
+    padding: 2rem;
+  }
+
+  .cap-category {
+    font-size: 1.35rem;
+    margin-bottom: 1.25rem;
+    color: var(--color-text);
+    border-bottom: 2px solid var(--color-accent);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+  }
+
+  .cap-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .cap-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 1rem;
+    color: var(--color-text);
+  }
+
+  .cap-dot {
+    width: 6px;
+    height: 6px;
+    background-color: var(--color-accent);
+    flex-shrink: 0;
+  }
+
+  /* Timeline */
+  .timeline-wrapper {
+    border-top: 1px solid var(--color-border);
+    padding-top: 4rem;
+  }
+
+  .timeline-heading {
+    font-size: 1.5rem;
+    margin-bottom: 2.5rem;
+    letter-spacing: 0.05em;
+  }
+
+  .timeline-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px dashed var(--color-border);
+  }
+
+  .timeline-period {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-accent);
+  }
+
+  .timeline-role {
+    font-size: 1.35rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .timeline-focus {
+    color: var(--color-text-muted);
+    font-size: 1.05rem;
+  }
+
+  /* Values Grid */
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2.5rem;
+    margin-top: 2rem;
+  }
+
+  .value-item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .value-number {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .value-title {
+    font-size: 1.35rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .value-desc {
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 850px) {
+    .grid-two-col {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .timeline-item {
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+    }
+  }
+</style>

@@ -1,0 +1,11 @@
+<svg width="800" height="500" viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="500" fill="#0A0A0A"/>
+  <!-- Structural section lines -->
+  <line x1="100" y1="400" x2="700" y2="400" stroke="#333333" stroke-width="4"/>
+  <rect x="180" y="150" width="120" height="250" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+  <rect x="340" y="220" width="120" height="180" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+  <rect x="500" y="100" width="120" height="300" fill="none" stroke="#F21B2D" stroke-width="3"/>
+  <line x1="500" y1="100" x2="620" y2="400" stroke="#F21B2D" stroke-width="2" stroke-dasharray="4 4"/>
+  <text x="500" y="80" fill="#F21B2D" font-family="sans-serif" font-size="14" font-weight="bold" letter-spacing="2">02 // CARBON INDEX</text>
+  <text x="180" y="130" fill="#666666" font-family="sans-serif" font-size="12" letter-spacing="1">PARAMETRIC CONCRETE ANALYZER</text>
+</svg>

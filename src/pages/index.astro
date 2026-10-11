@@ -1,0 +1,295 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import SectionHeading from '@components/SectionHeading.astro';
+import ProjectCard from '@components/ProjectCard.astro';
+import NewsletterForm from '@components/NewsletterForm.astro';
+import { projectsData } from '@data/projects';
+
+const featuredProjects = projectsData.filter((p) => p.featured).slice(0, 3);
+---
+
+<BaseLayout
+  title="Abeeb Olawuwo — Civil Engineering, Product Design & Digital Construction"
+  description="Personal portfolio of Abeeb Olawuwo. Bridging civil engineering, product design, and digital tools to modernize construction workflows."
+>
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container hero-container">
+      <div class="hero-tag-row">
+        <span class="badge badge-accent">CIVIL ENGINEERING &times; DIGITAL TECH</span>
+        <span class="hero-status">Based in UK / Global Outlook</span>
+      </div>
+
+      <h1 class="hero-headline">
+        UPGRADING <span class="text-accent">CONSTRUCTION</span> THROUGH INTENTIONAL DIGITAL TOOLS &amp; DESIGN.
+      </h1>
+
+      <p class="hero-lead">
+        I am Abeeb Olawuwo. My work explores how software workflows, parametric thinking, and product design principles can solve structural friction and elevate field productivity across the built environment.
+      </p>
+
+      <div class="hero-cta-group">
+        <a href="/projects" class="btn btn-primary">
+          <span>Explore Projects</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M3.33334 8H12.6667" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M8 3.33334L12.6667 8L8 12.6667" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <a href="#newsletter" class="btn btn-secondary">
+          <span>Join Weekly Newsletter</span>
+        </a>
+      </div>
+
+      <div class="hero-metrics-strip">
+        <div class="metric-item">
+          <span class="metric-label">FOCUS AREA</span>
+          <span class="metric-value">Construction Technology</span>
+        </div>
+        <div class="metric-divider"></div>
+        <div class="metric-item">
+          <span class="metric-label">BACKGROUND</span>
+          <span class="metric-value">Civil Engineering</span>
+        </div>
+        <div class="metric-divider"></div>
+        <div class="metric-item">
+          <span class="metric-label">DISCIPLINE</span>
+          <span class="metric-value">Product Design &amp; Workflows</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Introduction Section -->
+  <section class="section section-border intro-section">
+    <div class="container">
+      <div class="intro-grid">
+        <div class="intro-heading-col">
+          <span class="tag-label">PERSPECTIVE</span>
+          <h2 class="intro-title">WHERE PHYSICAL INFRASTRUCTURE MEETS DIGITAL LOGIC</h2>
+        </div>
+        <div class="intro-body-col">
+          <p class="intro-paragraph">
+            Civil engineering has historically relied on static deliverables, fragmented communication, and heavy site procedures. As digital technology advances, there is an immense opportunity to re-engineer how building projects are planned, designed, and executed on site.
+          </p>
+          <p class="intro-paragraph">
+            Combining a background in civil engineering with an interest in modern software products, I analyze structural workflows to identify where digital interfaces can eliminate ambiguity, reduce material waste, and empower field teams.
+          </p>
+          <div class="intro-link-row">
+            <a href="/about" class="inline-link">
+              <span>Read Full Background &amp; Philosophy</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M3.33334 8H12.6667" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M8 3.33334L12.6667 8L8 12.6667" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Selected Projects Section -->
+  <section class="section section-border projects-section">
+    <div class="container">
+      <div class="projects-header-row">
+        <SectionHeading
+          tag="WORK &amp; CONCEPTS"
+          title="SELECTED PROJECTS"
+          subtitle="Explorations in structural workflows, parametric estimation, and site communication tools."
+        />
+        <a href="/projects" class="btn btn-secondary view-all-btn">
+          View All Projects ({projectsData.length})
+        </a>
+      </div>
+
+      <div class="projects-grid">
+        {featuredProjects.map((project) => (
+          <ProjectCard project={project} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="section section-border newsletter-wrapper">
+    <div class="container">
+      <NewsletterForm
+        headline="THE DIGITAL CONSTRUCTION WEEKLY"
+        subheadline="Join construction professionals, engineers, and digital builders receiving weekly analysis on how modern software and design principles upgrade site practices."
+      />
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Hero Section */
+  .hero-section {
+    padding-top: clamp(4rem, 9vw, 8rem);
+    padding-bottom: clamp(4rem, 8vw, 6.5rem);
+    background-color: var(--color-bg);
+    position: relative;
+  }
+
+  .hero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-tag-row {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-status {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .hero-headline {
+    font-size: clamp(3rem, 7vw, 5.75rem);
+    line-height: 0.98;
+    max-width: 1050px;
+    margin-bottom: 2rem;
+    letter-spacing: 0.01em;
+  }
+
+  .text-accent {
+    color: var(--color-accent);
+  }
+
+  .hero-lead {
+    font-size: clamp(1.2rem, 2.2vw, 1.45rem);
+    color: var(--color-text-muted);
+    max-width: 760px;
+    line-height: 1.6;
+    margin-bottom: 2.75rem;
+  }
+
+  .hero-cta-group {
+    display: flex;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    margin-bottom: 4rem;
+  }
+
+  .hero-metrics-strip {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-border);
+    width: 100%;
+  }
+
+  .metric-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .metric-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+  }
+
+  .metric-value {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-text);
+  }
+
+  .metric-divider {
+    width: 1px;
+    height: 32px;
+    background-color: var(--color-border);
+  }
+
+  /* Intro Section */
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .tag-label {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-accent);
+    margin-bottom: 0.75rem;
+  }
+
+  .intro-title {
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    line-height: 1.05;
+  }
+
+  .intro-body-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .intro-paragraph {
+    font-size: 1.15rem;
+    color: var(--color-text);
+    line-height: 1.7;
+  }
+
+  .intro-link-row {
+    margin-top: 1rem;
+  }
+
+  /* Projects Section */
+  .projects-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 3rem;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 2rem;
+  }
+
+  .view-all-btn {
+    align-self: flex-start;
+  }
+
+  @media (max-width: 900px) {
+    .intro-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .projects-header-row {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.5rem;
+    }
+    .hero-metrics-strip {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.25rem;
+    }
+    .metric-divider {
+      display: none;
+    }
+  }
+</style>

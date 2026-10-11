@@ -1,0 +1,215 @@
+---
+const currentYear = new Date().getFullYear();
+
+const navLinks = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/projects", label: "Projects" },
+];
+
+const socialLinks = [
+  { label: "LinkedIn", href: "#", placeholder: true },
+  { label: "GitHub", href: "#", placeholder: true },
+  { label: "X / Twitter", href: "#", placeholder: true },
+];
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <!-- Brand & Mission Column -->
+      <div class="footer-brand">
+        <a href="/" class="footer-wordmark">
+          <span>ABEEB OLAWUWO</span>
+          <span class="brand-dot" aria-hidden="true"></span>
+        </a>
+        <p class="footer-tagline">
+          Civil engineering, product design, and digital technology upgrading the construction industry.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-col">
+        <h4 class="footer-heading">Navigation</h4>
+        <ul class="footer-links">
+          {
+            navLinks.map((link) => (
+              <li>
+                <a href={link.href} class="footer-link">
+                  {link.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <!-- Social Links (Placeholder) -->
+      <div class="footer-col">
+        <h4 class="footer-heading">Connect</h4>
+        <ul class="footer-links">
+          {
+            socialLinks.map((social) => (
+              <li>
+                <a href={social.href} class="footer-link social-link" title="Social profile link placeholder">
+                  {social.label}
+                  <span class="placeholder-badge">Placeholder</span>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="footer-col">
+        <h4 class="footer-heading">Contact</h4>
+        <p class="footer-contact">
+          Interested in collaboration or newsletter topics?
+        </p>
+        <a href="mailto:contact@example.com" class="footer-email">
+          hello@abeebolawuwo.com
+        </a>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+      <p class="copyright">
+        &copy; {currentYear} Abeeb Olawuwo. All rights reserved.
+      </p>
+      <p class="legal-note">
+        Built with intentionality &amp; Astro static architecture.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background-color: var(--color-text);
+    color: var(--color-bg);
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+    margin-top: auto;
+    border-top: 2px solid var(--color-border-dark);
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 3rem;
+    padding-bottom: 4rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .footer-wordmark {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    letter-spacing: 0.04em;
+    margin-bottom: 1rem;
+  }
+
+  .brand-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--color-accent);
+    border-radius: 50%;
+  }
+
+  .footer-tagline {
+    color: #a0a0a0;
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 320px;
+  }
+
+  .footer-heading {
+    color: #ffffff;
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.25rem;
+  }
+
+  .footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .footer-link {
+    color: #a0a0a0;
+    font-size: 0.95rem;
+    transition: color var(--transition-fast);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .footer-link:hover {
+    color: var(--color-accent);
+  }
+
+  .placeholder-badge {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #888888;
+    padding: 0.15rem 0.4rem;
+    border-radius: 2px;
+  }
+
+  .footer-contact {
+    color: #a0a0a0;
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .footer-email {
+    font-family: var(--font-body);
+    color: var(--color-accent);
+    font-weight: 500;
+    font-size: 1.05rem;
+    display: inline-block;
+  }
+
+  .footer-email:hover {
+    text-decoration: underline;
+  }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2rem;
+    color: #777777;
+    font-size: 0.875rem;
+  }
+
+  @media (max-width: 992px) {
+    .footer-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .footer-bottom {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+  }
+</style>
